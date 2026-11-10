@@ -1,0 +1,17 @@
+# ---- TA-LNN / TALNet runtime + training dependencies ----
+# Core numerics & autodiff (the model is trained/served with autograd over NumPy)
+numpy>=1.24
+autograd>=1.6
+
+# Persistent homology (per-organ topological descriptors). Optional at runtime:
+# if unavailable, topology.py falls back to an exact H0/MST descriptor.
+ripser>=0.6
+
+# Metrics (AUROC/AUPRC). Optional: metrics.py has pure-NumPy fallbacks.
+scikit-learn>=1.2
+
+# API server
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9
+pydantic>=2.0
